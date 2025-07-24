@@ -1,0 +1,16 @@
+name: Link Checker
+
+on:
+  schedule:
+    - cron: '0 3 * * 1' # 毎週月曜3時
+  workflow_dispatch:
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Links
+        uses: lycheeverse/lychee-action@v1.8.0
+        with:
+          args: --verbose './**/*.md'

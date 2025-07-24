@@ -1,6 +1,6 @@
 # RFC-XXXX: Title
 
-- Status: Draft
+- Status: Draft <!-- Draft/Active/Withdrawn/Rejected/Superseded -->
 - Type: Feature/Enhancement/Process
 - Author: Your Name (@github-username)
 - Created: YYYY-MM-DD

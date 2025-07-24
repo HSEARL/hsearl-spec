@@ -1,0 +1,29 @@
+name: RFC Structure Check
+
+on:
+  pull_request:
+    paths:
+      - 'RFCs/**'
+
+jobs:
+  rfc-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for RFC headers
+        run: |
+          missing_headers=0
+          for file in $(find RFCs -name '*.md'); do
+            if ! grep -q 'Status:' "$file"; then
+              echo "Missing 'Status:' in $file"
+              missing_headers=1
+            fi
+            if ! grep -q '## Summary' "$file"; then
+              echo "Missing '## Summary' in $file"
+              missing_headers=1
+            fi
+          done
+          if [ "$missing_headers" -ne 0 ]; then
+            echo "RFC header check failed"
+            exit 1
+          fi
