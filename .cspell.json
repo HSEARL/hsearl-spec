@@ -1,0 +1,43 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "HSEARL",
+    "Semantic",
+    "Ecological",
+    "Adaptive",
+    "Cognition",
+    "Motivational",
+    "API",
+    "APIs",
+    "JSON",
+    "YAML",
+    "GraphQL",
+    "RFCs",
+    "SemVer",
+    "Versioning",
+    "schemas",
+    "validators",
+    "conformance"
+  ],
+  "flagWords": [],
+  "ignorePaths": [
+    "node_modules/**",
+    ".git/**",
+    "*.png",
+    "*.jpg",
+    "*.jpeg",
+    "*.gif"
+  ],
+  "overrides": [
+    {
+      "filename": "**/*.md",
+      "languageSettings": [
+        {
+          "languageId": "markdown",
+          "locale": "en-US"
+        }
+      ]
+    }
+  ]
+}
