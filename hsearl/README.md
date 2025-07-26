@@ -1,35 +1,52 @@
-# HSEARL Specifications
+# HSEARL仕様
 
-This directory contains the formal specifications for the HSEARL framework.
+このディレクトリには、HSEARLフレームワークの正式な仕様が含まれています。
 
-## Structure
+## 概要
 
-- **[core/](./core/)** - Core framework definitions and fundamental concepts
-- **[extensions/](./extensions/)** - Standard extensions that build upon the core
-- **[experimental/](./experimental/)** - Experimental features under development
+HSEARLは、人間をデジタル空間上で構築するためのフレームワークです。現状LLMを用いた実装が前提であり、frame、memory、physicalityのモジュールごとに体系的に定義しています。
 
-## Specification Format
+frameモジュール：人間の認知、動機、反応、適応状態、初期情緒配線、外的演技構造の6つのパラメータを中心に、文脈調整層による補助的な背景情報も含めて人間の骨格的な深層構造を包括的に定義しています。
 
-Each specification document follows this structure:
+memoryモジュール：人間の記憶や意味づけをモデル化する。現状LLMの記憶開発は盛んなので、最新を負いつつ、改良を加える方針が良い
 
-1. **Overview** - High-level description and purpose
-2. **Definitions** - Formal definitions of concepts and data structures
-3. **Semantics** - Behavioral rules and constraints
-4. **Examples** - Illustrative use cases
-5. **Conformance** - Requirements for implementation
+physicalityモジュール:肉体性に関する領域。最もデジタル上との相性が悪いが、これがないと人間的なタスクの一部をこなせない。例えば感情は肉体状態に影響される。これは同じ映画を見てもタイミングで評価が左右されることにつながる。つまりレコメンドタスクにおいて精度のズレにつながる。
 
-## Version Management
+## 構造
 
-Specifications are versioned independently:
-- Core specs use MAJOR.MINOR.PATCH versioning
-- Extensions reference the core version they depend on
-- Experimental features are unversioned until stabilized
+- **[frame/](./frame/)** - フレームワーク仕様（6つのパラメータ定義）
+  - 認知型（Cognitive Type）
+  - 動機型（Motivational Type）
+  - 反応型（Reactive Type）
+  - 適応状態（Adaptive State）
+  - 初期情緒配線（Early Emotional Wiring）
+  - 外的演技構造（External Role Structure）
+  - [文脈調整層（Contextual Modulation Layer）](./frame/contextual_modulation_layer/) - 外的文脈（年齢、文化、言語など）を考慮する補助レイヤー
+- **[memory/](./memory/)** - メモリシステムの仕様
+- **[physicality/](./physicality/)** - 肉体性・物理的側面の仕様
 
-## Contributing
+## 仕様フォーマット
 
-To propose changes to specifications:
-1. Submit an RFC in the `/RFCs/` directory
-2. Participate in community discussion
-3. Upon approval, submit a PR with the specification changes
+各仕様ドキュメントは以下の構造に従います：
 
-See [CONTRIBUTING.md](../CONTRIBUTING.md) for detailed guidelines.
+1. **概要** - 高レベルの説明と目的
+2. **定義** - 概念とデータ構造の正式な定義
+3. **セマンティクス** - 動作ルールと制約
+4. **例** - 説明的な使用例
+5. **適合性** - 実装のための要件
+
+## バージョン管理
+
+仕様は独立してバージョン管理されています：
+- フレームワーク仕様はMAJOR.MINOR.PATCHバージョニングを使用
+- 各コンポーネントは依存するフレームワークバージョンを参照
+- 実験的機能は安定化されるまでバージョン付けされません
+
+## 貢献
+
+仕様への変更を提案するには：
+1. `/RFCs/`ディレクトリにRFCを提出
+2. コミュニティディスカッションに参加
+3. 承認後、仕様変更を含むプルリクエストを提出
+
+詳細なガイドラインは[RFCプロセス](../RFCs/)を参照してください。

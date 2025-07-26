@@ -1,3 +1,0 @@
-# Code of Conduct
-
-All participants must adhere to...

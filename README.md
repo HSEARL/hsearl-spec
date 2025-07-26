@@ -1,4 +1,4 @@
-# HSEARL Specification
+# HSEARL
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Discussions](https://img.shields.io/badge/GitHub-Discussions-green)](https://github.com/HSEARL/hsearl-spec/discussions)
@@ -8,18 +8,25 @@
 
 ## Overview
 
-This repository defines the core semantics, structure, and extension process of the HSEARL (Human Semantic & Ecological Adaptive Representation Language) framework — a semantic skeleton for representing and simulating human cognition, motivation, and adaptation.
+This repository defines the core semantics, structure, and extension process of the HSEARL framework.
 
-HSEARL provides a formal specification for modeling:
+HSEARL is a framework and collection of technologies for building humans in digital spaces.
+
+HSEARL aims to provide a formal specification for modeling:
+
 - **Cognitive Architectures**: Memory systems, attention mechanisms, and decision-making processes
 - **Motivational Dynamics**: Need hierarchies, goal pursuit, and behavioral adaptation
 - **Environmental Interactions**: Context-aware responses and ecological constraints
 - **Temporal Evolution**: Learning, development, and state transitions over time
 
+The purpose of this project is to solve pure tasks in human activities, and does not address academic philosophy, rationale, or accuracy discussions about what it means to be human.
+
+Currently, implementation using LLMs is assumed, and this can be regarded as the necessary framework and technologies for that purpose.
+
 ## Project Scope
 
 This specification repository contains:
-- **Core Definitions**: Fundamental concepts and data structures
+- **Core Definitions**: [Fundamental concepts and data structures](hsearl)
 - **Extension Mechanisms**: How to add new capabilities while maintaining compatibility
 - **Formal Schemas**: Data structure definitions and validation rules
 - **Design Documentation**: Architecture guidelines and best practices
@@ -32,7 +39,7 @@ git clone https://github.com/HSEARL/hsearl-spec.git
 cd hsearl-spec
 
 # Review core specifications
-cd specs/
+cd hsearl/
 
 # Check data schemas
 cd schemas/
@@ -42,45 +49,42 @@ cd schemas/
 
 ```
 hsearl-spec/
-├── specs/              # Formal specifications
-│   ├── core/          # Core framework definitions
-│   ├── extensions/    # Standard extensions
-│   └── experimental/  # Experimental features
-├── RFCs/              # Request for Comments (proposals)
-├── schemas/           # JSON/YAML schemas
-├── docs/              # Additional documentation
-│   ├── architecture/  # Architecture guides
+├── hsearl/            # HSEARL framework definitions
+│   ├── frame/        # Framework specifications
+│   ├── memory/       # Memory systems
+│   └── physicality/  # Physicality
+├── RFCs/             # Request for Comments (proposals)
+├── schemas/          # JSON/YAML schemas
+├── docs/             # Additional documentation
+│   ├── architecture/ # Architecture guides
+│   ├── design/       # Design documents
 │   └── glossary.md   # Terms and definitions
-└── .github/           # Project management
+├── experimental/     # Experimental features
+└── LICENSE, README, etc. # Project files
 ```
 
 ## Key Documents
 
-- 📚 **[Core Specification](./specs/core/)** - Fundamental HSEARL concepts
+- 📚 **[Core Specification](./hsearl/)** - HSEARL core concepts
 - 📜 **[RFC Process](./RFCs/)** - How to propose changes
-- 🏛️ **[Governance](./GOVERNANCE.md)** - Decision-making process
-- 🔒 **[Security Policy](./SECURITY.md)** - Vulnerability reporting
-- 📝 **[Contributing Guide](./CONTRIBUTING.md)** - How to contribute
-- 📖 **[Glossary](./docs/glossary.md)** - Key terms and definitions
+- 📖 **[Glossary](./docs/glossary.md)** - Key terms and definitions ([Japanese](./docs/glossary.ja.md))
 
 ## Related Projects
 
-- 🧪 **[hsearl-core](https://github.com/HSEARL/hsearl-core)** - Reference implementation
-- 📊 **[hsearl-eval](https://github.com/HSEARL/hsearl-eval)** - Evaluation framework
-- 🔧 **[hsearl-tools](https://github.com/HSEARL/hsearl-tools)** - Development utilities
+- 🧪 **[hsearl-core](https://github.com/HSEARL/hsearl-core)** - Library code and prompt implementations
 
 ## Community
 
 - **Discussions**: [GitHub Discussions](https://github.com/HSEARL/hsearl-spec/discussions)
 - **Issues**: [Bug reports and feature requests](https://github.com/HSEARL/hsearl-spec/issues)
-- **Mailing List**: hsearl-dev@googlegroups.com
+- **Mailing List**:
 
 ## Getting Involved
 
-We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md) for details on:
-- Submitting RFCs
-- Reporting issues
-- Specification improvements
+We welcome contributions! Please submit:
+- RFCs for proposing changes
+- Issues for bug reports and feature requests
+- Pull requests for specification improvements
 - Documentation enhancements
 
 ## Versioning
@@ -94,4 +98,9 @@ Current version: **0.1.0** (Pre-release)
 
 ## License
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](./LICENSE) file for details.
+| Part | License | Commercial Use |
+|------|------------|----------|
+| hsearl-spec | Apache 2.0 | Free |
+| hsearl-core (reference code) | Polyform Noncommercial 1.0.0 | **Prohibited** (requires separate agreement) |
+
+Commercial licensing inquiries → **contact@zeetio.jp**
